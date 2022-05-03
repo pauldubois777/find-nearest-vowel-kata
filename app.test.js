@@ -46,9 +46,14 @@ describe('findNearestVowels', () => {
             });
         });
 
+        it('input > 100 chars', () => {
+            const longString = 'o'.repeat(101);
+            expect(() => findNearestVowels(longString)).toThrow('input cannot exceed 100 characters in length');
+        });
+
         it('no vowels present', () => {
             expect(() => findNearestVowels('wBcrr')).toThrow('input must contain at least one vowel character: a, e, i, o, or u');
-        })
+        });
     });
 
     describe('results', () => {

@@ -30,6 +30,11 @@ const findNearestVowels = input => {
         }
     });
 
+    // Check for max length
+    if (inputArray.length > 100) {
+        throw Error('input cannot exceed 100 characters in length');
+    }
+
     // Check for no vowels
     if (vowelPositions.length === 0) {
         throw Error('input must contain at least one vowel character: a, e, i, o, or u')
