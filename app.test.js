@@ -13,5 +13,9 @@ describe('findNearestVowels', () => {
     
             expect(result).toEqual([]);
         });
+
+        it('non string throws error', () => {
+            expect(() => findNearestVowels(123)).toThrow('input must be typeof string');
+        });
     });
 });
