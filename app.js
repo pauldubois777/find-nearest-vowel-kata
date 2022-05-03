@@ -50,6 +50,8 @@ const findNearestVowels = input => {
     // Single vowel
     if (vowelPositions.length === 1) {
         const singleVowelIdx = vowelPositions[0];
+
+        // Every non-vowel is its positive distance from the vowel
         return inputArray.map((_, idx) => Math.abs(idx - singleVowelIdx));
     }
 
