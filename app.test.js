@@ -66,9 +66,21 @@ describe('findNearestVowels', () => {
             expect(result).toEqual([0, 0, 0, 0, 0, 0]);
         })
 
-        // it('only one leading vowel', () => {
-        //     const result = findNearestVowels('abcdfg');
-        //     expect(result).toEqual([0, 1, 2, 3, 4, 5]);
-        // });
+        it('single vowel', () => {
+            let result = findNearestVowels('abcdf');
+            expect(result).toEqual([0, 1, 2, 3, 4]);
+
+            result = findNearestVowels('becdf');
+            expect(result).toEqual([1, 0, 1, 2, 3]);
+            
+            result = findNearestVowels('bcidf');
+            expect(result).toEqual([2, 1, 0, 1, 2]);
+
+            result = findNearestVowels('bcdof');
+            expect(result).toEqual([3, 2, 1, 0, 1]);
+            
+            result = findNearestVowels('bcdfu');
+            expect(result).toEqual([4, 3, 2, 1, 0]);
+        });
     })
 });

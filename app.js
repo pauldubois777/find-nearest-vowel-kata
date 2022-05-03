@@ -42,19 +42,13 @@ const findNearestVowels = input => {
         return Array(inputArray.length).fill(0);
     }
 
-    // const result = Array(inputArray.length);
-    // inputArray.forEach((char, idx) => {
-    //     if (vowelPositions.includes(idx)) {
-    //         // Set vowels to 0 distance
-    //         result[idx] = 0;
-    //     } else {
-    //         // Determine distance to closest vowel
+    // Single vowel
+    if (vowelPositions.length === 1) {
+        const singleVowelIdx = vowelPositions[0];
+        return inputArray.map((_, idx) => Math.abs(idx - singleVowelIdx));
+    }
 
-            
-    //     }
-    // });
-
-    // return result;
+    throw Error('Unhandled input');
 }
 
 module.exports = findNearestVowels;
