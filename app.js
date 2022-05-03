@@ -37,15 +37,24 @@ const findNearestVowels = input => {
 
     // Determine result
 
-    const result = Array(inputArray.length);
-    inputArray.forEach((char, idx) => {
-        // Set vowels to 0 distance
-        if (vowelPositions.includes(idx)) {
-            result[idx] = 0;
-        }
-    });
+    // All vowels
+    if (inputArray.length === vowelPositions.length) {
+        return Array(inputArray.length).fill(0);
+    }
 
-    return result;
+    // const result = Array(inputArray.length);
+    // inputArray.forEach((char, idx) => {
+    //     if (vowelPositions.includes(idx)) {
+    //         // Set vowels to 0 distance
+    //         result[idx] = 0;
+    //     } else {
+    //         // Determine distance to closest vowel
+
+            
+    //     }
+    // });
+
+    // return result;
 }
 
 module.exports = findNearestVowels;

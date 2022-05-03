@@ -65,5 +65,10 @@ describe('findNearestVowels', () => {
             result = findNearestVowels('eeeeee');
             expect(result).toEqual([0, 0, 0, 0, 0, 0]);
         })
+
+        // it('only one leading vowel', () => {
+        //     const result = findNearestVowels('abcdfg');
+        //     expect(result).toEqual([0, 1, 2, 3, 4, 5]);
+        // });
     })
 });
