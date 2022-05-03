@@ -25,7 +25,7 @@ const findNearestVowels = input => {
             throw Error('input can only contain a-z and A-Z characters');
         }
 
-        if (VOWELS.indexOf(char) > -1) {
+        if (VOWELS.includes(char)) {
             vowelPositions.push(idx);
         }
     });
