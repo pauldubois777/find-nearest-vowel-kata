@@ -45,5 +45,9 @@ describe('findNearestVowels', () => {
                 expect(() => findNearestVowels('waBcrro ')).toThrow('input can only contain a-z and A-Z characters');
             });
         });
+
+        it('no vowels present', () => {
+            expect(() => findNearestVowels('wBcrr')).toThrow('input must contain at least one vowel character: a, e, i, o, or u');
+        })
     });
 });
