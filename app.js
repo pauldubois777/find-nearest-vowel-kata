@@ -1,7 +1,7 @@
 const findNearestVowels = input => {
     // Validations
 
-    if (input === '') {
+    if (input.trim() === '') {
         return [];
     }
 }

@@ -7,5 +7,11 @@ describe('findNearestVowels', () => {
     
             expect(result).toEqual([]);
         });
+
+        it('all spaces returns empty array', () => {
+            const result = findNearestVowels('   ');
+    
+            expect(result).toEqual([]);
+        });
     });
 });
