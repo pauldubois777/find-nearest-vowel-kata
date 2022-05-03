@@ -1,5 +1,6 @@
 // Valid input is an empty string or a string with only characters A-Z a-z and at least one vowel.
 // Any validation errors will throw an exception with explaination.
+// Logic specification:  https://www.codewars.com/kata/6158805b7b10b80007ce2c72
 
 const findNearestVowels = input => {
     const VOWELS = 'aeiou';
@@ -29,9 +30,22 @@ const findNearestVowels = input => {
         }
     });
 
+    // Check for no vowels
     if (vowelPositions.length === 0) {
         throw Error('input must contain at least one vowel character: a, e, i, o, or u')
     }
+
+    // Determine result
+
+    const result = Array(inputArray.length);
+    inputArray.forEach((char, idx) => {
+        // Set vowels to 0 distance
+        if (vowelPositions.includes(idx)) {
+            result[idx] = 0;
+        }
+    });
+
+    return result;
 }
 
 module.exports = findNearestVowels;

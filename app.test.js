@@ -50,4 +50,20 @@ describe('findNearestVowels', () => {
             expect(() => findNearestVowels('wBcrr')).toThrow('input must contain at least one vowel character: a, e, i, o, or u');
         })
     });
+
+    describe('results', () => {
+        it('all vowels', () => {
+            let result = findNearestVowels('aeiou');
+            expect(result).toEqual([0, 0, 0, 0, 0]);
+
+            result = findNearestVowels('aeiouaeiouaeiou');
+            expect(result).toEqual([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+            result = findNearestVowels('aaaaaa');
+            expect(result).toEqual([0, 0, 0, 0, 0, 0]);
+
+            result = findNearestVowels('eeeeee');
+            expect(result).toEqual([0, 0, 0, 0, 0, 0]);
+        })
+    })
 });
