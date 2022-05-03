@@ -2,17 +2,25 @@
 // Any validation errors will throw an exception with explaination.
 
 const findNearestVowels = input => {
-    // Validations
-
-    // Not a string
+    // Validate is a string
     if (typeof input !== 'string') {
         throw Error('input must be typeof string');
     }
 
-    // Empty string
+    // Validate not empty
     if (input.trim() === '') {
         return [];
     }
+
+    // Convert to lower case array of characters
+    inputArray = Array.from(input.toLocaleLowerCase());
+
+    // String only contains characters a-z
+    inputArray.forEach(char => {
+        if (char.localeCompare('a') < 0 || char.localeCompare('z') > 0) {
+            throw Error('input can only contain a-z and A-Z characters');
+        }
+    });
 }
 
 module.exports = findNearestVowels;

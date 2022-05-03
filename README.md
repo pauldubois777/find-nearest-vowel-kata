@@ -12,7 +12,10 @@ Strategy
   - Spaces
 - Code for param validations
   - null or undefined
+  - Too long
   - Invalid characaters
+    - characters before a in sort seq
+    - characters after z in sort seq
   - No vowel in string
 - Develop initial logic
 - Initial logic tests

@@ -25,5 +25,13 @@ describe('findNearestVowels', () => {
         it('undefined throws error', () => {
             expect(() => findNearestVowels(undefined)).toThrow('input must be typeof string');
         });
+
+        describe('invalid characters in string', () => {
+            it('number', () => {
+                expect(() => findNearestVowels('aBc1ro')).toThrow('input can only contain a-z and A-Z characters');
+                expect(() => findNearestVowels('3aBcrro')).toThrow('input can only contain a-z and A-Z characters');
+                expect(() => findNearestVowels('waBcrro0')).toThrow('input can only contain a-z and A-Z characters');
+            });
+        });
     });
 });
