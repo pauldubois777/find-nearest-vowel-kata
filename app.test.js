@@ -1,9 +1,11 @@
 const findNearestVowels = require('./app');
 
 describe('findNearestVowels', () => {
-    it('returns undefined', () => {
-        const result = findNearestVowels();
-
-        expect(result).toBeUndefined();
+    describe('validations', () => {
+        it('empty string returns empty array', () => {
+            const result = findNearestVowels('');
+    
+            expect(result).toEqual([]);
+        });
     });
 });
