@@ -32,6 +32,12 @@ describe('findNearestVowels', () => {
                 expect(() => findNearestVowels('3aBcrro')).toThrow('input can only contain a-z and A-Z characters');
                 expect(() => findNearestVowels('waBcrro0')).toThrow('input can only contain a-z and A-Z characters');
             });
+
+            it('special characters', () => {
+                expect(() => findNearestVowels('~aBcwro')).toThrow('input can only contain a-z and A-Z characters');
+                expect(() => findNearestVowels('aBcr%ro')).toThrow('input can only contain a-z and A-Z characters');
+                expect(() => findNearestVowels('waBcrro|')).toThrow('input can only contain a-z and A-Z characters');
+            });
         });
     });
 });
