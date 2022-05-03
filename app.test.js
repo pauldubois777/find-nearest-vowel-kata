@@ -82,5 +82,13 @@ describe('findNearestVowels', () => {
             result = findNearestVowels('bcdfu');
             expect(result).toEqual([4, 3, 2, 1, 0]);
         });
+
+        it('multiple vowels', () => {
+            let result = findNearestVowels('abcdefghi');
+            expect(result).toEqual([0, 1, 2, 1, 0, 1, 2, 1, 0]);
+
+            result = findNearestVowels('abcdxefghzi');
+            expect(result).toEqual([0, 1, 2, 2, 1, 0, 1, 2, 2, 1, 0]);
+        });
     })
 });
