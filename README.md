@@ -6,6 +6,11 @@ This is a simple Node project with `jest` being the only dependency.
 
 All coding was done using **TDD**
 
+To run the tests:
+- Clone this repo
+- Run `npm install`
+- Run `npm test`
+
 Strategy
 - Create code and test files
 - Create function

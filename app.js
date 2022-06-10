@@ -82,12 +82,9 @@ const findNearestVowels = input => {
 
         // char idx is between two vowels
         const distanceToVowelBefore = idx - reversedVowelPositions.find(vidx => vidx < idx);
-        console.log('before', distanceToVowelBefore);
         const distanceToVowelAfter = vowelPositions.find(vidx => vidx > idx) - idx;
-        console.log('after', distanceToVowelAfter);
 
         return distanceToVowelAfter < distanceToVowelBefore ? distanceToVowelAfter : distanceToVowelBefore;
-
     });
 
     return result;

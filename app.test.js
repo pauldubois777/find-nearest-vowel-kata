@@ -109,6 +109,9 @@ describe('findNearestVowels', () => {
 
             result = findNearestVowels('qbcijlkw');
             expect(result).toEqual([3, 2, 1, 0, 1, 2, 3, 4]);
+
+            result = findNearestVowels('bcdefghjk');
+            expect(result).toEqual([3, 2, 1, 0, 1, 2, 3, 4, 5]);
         });
     })
 });
