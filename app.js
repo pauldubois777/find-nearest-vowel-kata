@@ -44,6 +44,7 @@ const findNearestVowels = input => {
 
     // All vowels
     if (inputArray.length === vowelPositions.length) {
+        // Every vowel is 0 distance from self
         return Array(inputArray.length).fill(0);
     }
 
@@ -55,7 +56,39 @@ const findNearestVowels = input => {
         return inputArray.map((_, idx) => Math.abs(idx - singleVowelIdx));
     }
 
-    throw Error('Unhandled input');
+    // More than one vowel
+
+    const firstVowelIdx = vowelPositions[0];
+    const lastVowelIdx = vowelPositions[vowelPositions.lenght - 1];
+    const reversedVowelPositions = vowelPositions.reverse();
+
+    const result = inputArray.map((char, idx) => {
+        // Is char a vowel?
+        if (VOWELS.includes(char)) {
+            return 0; // Vowels are 0 distance from themselves
+        }
+
+        // char idx less than lowest vowel index
+        if (idx < firstVowelIdx) {
+            // Distance is to the vowel
+            return firstVowelIdx - idx;
+        }
+
+        // char idx greater than highest vowel idx
+        if (idx > lastVowelIdx) {
+            // Distance is from the vowel
+            return idx - lastVowelIdx;
+        }
+
+        // char idx is between two vowels
+        const distanceToVowelBefore = idx - reversedVowelPositions.find(vidx => vidx < idx);
+        const distanceToVowelAfter = vowelPositions.find(vidx => vidx > idx) - idx;
+
+        return distanceToVowelAfter < distanceToVowelBefore ? distanceToVowelAfter : distanceToVowelBefore;
+
+    });
+
+    return result;
 }
 
 module.exports = findNearestVowels;
