@@ -94,6 +94,21 @@ describe('findNearestVowels', () => {
 
             result = findNearestVowels('abcdxefghzi');
             expect(result).toEqual([0, 1, 2, 2, 1, 0, 1, 2, 2, 1, 0]);
+
+            result = findNearestVowels('qaif');
+            expect(result).toEqual([1, 0, 0, 1]);
+            
+            result = findNearestVowels('afi');
+            expect(result).toEqual([0, 1, 0]);
+
+            result = findNearestVowels('qbcijlkw');
+            expect(result).toEqual([3, 2, 1, 0, 1, 2, 3, 4]);
+
+            result = findNearestVowels('pktrgyoql');
+            expect(result).toEqual([6, 5, 4, 3, 2, 1, 0, 1, 2]);
+
+            result = findNearestVowels('qbcijlkw');
+            expect(result).toEqual([3, 2, 1, 0, 1, 2, 3, 4]);
         });
     })
 });
