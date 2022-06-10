@@ -11,7 +11,7 @@ To run the tests:
 - Run `npm install`
 - Run `npm test`
 
-Strategy
+Initial Strategy to solve the problem:
 - Create code and test files
 - Create function
 - Code for empty string returns empty array
