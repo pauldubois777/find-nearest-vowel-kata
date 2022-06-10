@@ -112,6 +112,12 @@ describe('findNearestVowels', () => {
 
             result = findNearestVowels('bcdefghjk');
             expect(result).toEqual([3, 2, 1, 0, 1, 2, 3, 4, 5]);
+
+            result = findNearestVowels('aeiouHuoiea');
+            expect(result).toEqual([0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]);
+
+            result = findNearestVowels('cdRPEOatw');
+            expect(result).toEqual([4, 3, 2, 1, 0, 0, 0, 1, 2]);
         });
     })
 });
